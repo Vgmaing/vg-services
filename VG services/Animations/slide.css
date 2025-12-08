@@ -1,0 +1,5 @@
+.slide { animation: slide 1s ease; }
+@keyframes slide {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
