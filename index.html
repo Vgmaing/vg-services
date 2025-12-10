@@ -1,103 +1,187 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VG Services</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VG Services — Neon</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- HEADER -->
-    <header class="header">
-        <img src="assets/logo.png" class="logo">
-        <h1>VG SERVICES</h1>
-        <p>Your One-Stop Digital Service Hub</p>
-    </header>
+  <header class="site-header">
+    <div class="logo-wrap">
+      <!-- logo image optional, place assets/logo.png if you have it -->
+      <img src="assets/icon-gfx.png" alt="" class="logo-img" onerror="this.style.display='none'">
+      <div class="brand">VG <span>SERVICES</span></div>
+    </div>
+    <p class="tag">Premium digital services — pay with Steam / Play Store gift cards</p>
+  </header>
 
-    <!-- SERVICES SECTION -->
-    <section id="services">
-        <h2>Our Services</h2>
-
-        <div class="grid">
-
-            <!-- GAMING -->
-            <div class="service gaming fade">
-                <img src="assets/icon-gaming.png">
-                <h3>Gaming Support</h3>
-                <p>Custom help, builds & guides.</p>
-
-                <div class="prices">
-                    <div>₹150 – 1 Month</div>
-                    <div>₹299 – 3 Months</div>
-                    <div>₹450 – 6 Months</div>
-                </div>
-
-                <button class="buy" onclick="openPayment('Gaming Support')">Buy with Gift Cards</button>
-            </div>
-
-            <!-- NOTES -->
-            <div class="service notes slide">
-                <img src="assets/icon-notes.png">
-                <h3>Notes & Study Material</h3>
-                <p>Class notes, study help, summaries.</p>
-
-                <div class="prices">
-                    <div>₹99 – Single Notes</div>
-                    <div>₹199 – Full Chapter</div>
-                    <div>₹299 – All Notes Monthly</div>
-                </div>
-
-                <button class="buy" onclick="openPayment('Notes')">Buy with Gift Cards</button>
-            </div>
-
-            <!-- VIDEO EDITING -->
-            <div class="service editing scale">
-                <img src="assets/icon-editing.png">
-                <h3>Video Editing</h3>
-                <p>Perfect edits for YouTube, Reels & Gaming.</p>
-
-                <div class="prices">
-                    <div>₹200 – Basic Edit</div>
-                    <div>₹400 – Advanced Edit</div>
-                    <div>₹600 – Full Package</div>
-                </div>
-
-                <button class="buy" onclick="openPayment('Video Editing')">Buy with Gift Cards</button>
-            </div>
-
-            <!-- GFX DESIGN -->
-            <div class="service gfx fade">
-                <img src="assets/icon-gfx.png">
-                <h3>GFX Designing</h3>
-                <p>Logos, thumbnails, banners.</p>
-
-                <div class="prices">
-                    <div>₹149 – Logo</div>
-                    <div>₹249 – Thumbnail Pack</div>
-                    <div>₹499 – Full Branding Set</div>
-                </div>
-
-                <button class="buy" onclick="openPayment('GFX Designing')">Buy with Gift Cards</button>
-            </div>
-
-        </div>
+  <main>
+    <section class="intro">
+      <h1>Our Services</h1>
+      <p class="intro-sub">Choose a service — each has a neon theme and perks.</p>
     </section>
 
-    <!-- PAYMENT POPUP -->
-    <div id="paymentBox" class="payment-box">
-        <div class="payment-content">
-            <h2 id="serviceTitle"></h2>
-            <p>Select your gift card type:</p>
+    <section class="services-grid">
 
-            <button onclick="pay('Google Play Gift Card')">Google Play</button>
-            <button onclick="pay('Steam Gift Card')">Steam</button>
-
-            <p class="note">After buying, send the code on WhatsApp.</p>
-            <button class="close" onclick="closePayment()">Close</button>
+      <!-- GAMING (blue + red accents) -->
+      <article class="card service-gaming">
+        <div class="icon-wrap">
+          <img src="assets/icon-gaming.png" alt="Gaming" class="svc-icon" onerror="this.style.display='none'">
+          <div class="icon-fallback">G</div>
         </div>
+        <h3>Gaming Support</h3>
+        <p class="desc">Custom help, builds & guides.</p>
+        <ul class="price-list">
+          <li>₹150 — 1 Month</li>
+          <li>₹299 — 3 Months</li>
+          <li>₹450 — 6 Months</li>
+        </ul>
+        <h4>Perks</h4>
+        <ul class="perks">
+          <li>Pro strategy guide</li>
+          <li>Custom sensitivity/config</li>
+          <li>Weekly meta tips</li>
+        </ul>
+        <button class="btn buy-btn" data-service="Gaming Support">Buy with Gift Cards</button>
+      </article>
+
+      <!-- NOTES (neon green) -->
+      <article class="card service-notes">
+        <div class="icon-wrap">
+          <img src="assets/icon-notes.png" alt="Notes" class="svc-icon" onerror="this.style.display='none'">
+          <div class="icon-fallback">N</div>
+        </div>
+        <h3>Notes & Study Material</h3>
+        <p class="desc">Class notes, summaries, MCQs.</p>
+        <ul class="price-list">
+          <li>₹300 — 1 Month</li>
+          <li>₹550 — 3 Months</li>
+          <li>₹999 — 6 Months</li>
+        </ul>
+        <h4>Perks</h4>
+        <ul class="perks">
+          <li>Chapter-wise notes</li>
+          <li>Practice MCQs</li>
+          <li>PDF for offline study</li>
+        </ul>
+        <button class="btn buy-btn" data-service="Notes & Study Material">Buy with Gift Cards</button>
+      </article>
+
+      <!-- HOMEWORK (orange) -->
+      <article class="card service-homework">
+        <div class="icon-wrap">
+          <img src="assets/icon-homework.png" alt="Homework" class="svc-icon" onerror="this.style.display='none'">
+          <div class="icon-fallback">H</div>
+        </div>
+        <h3>Homework / Assignment Help</h3>
+        <p class="desc">Quick, accurate solutions & formatting.</p>
+        <ul class="price-list">
+          <li>₹200 — 1 Month</li>
+          <li>₹450 — 3 Months</li>
+          <li>₹850 — 6 Months</li>
+        </ul>
+        <h4>Perks</h4>
+        <ul class="perks">
+          <li>24 hr typical turnaround</li>
+          <li>Step-by-step solutions</li>
+          <li>One free revision</li>
+        </ul>
+        <button class="btn buy-btn" data-service="Homework Help">Buy with Gift Cards</button>
+      </article>
+
+      <!-- EDITING (purple) -->
+      <article class="card service-editing">
+        <div class="icon-wrap">
+          <img src="assets/icon-editing.png" alt="Editing" class="svc-icon" onerror="this.style.display='none'">
+          <div class="icon-fallback">E</div>
+        </div>
+        <h3>Video Editing</h3>
+        <p class="desc">YouTube/Reels/Gaming edits.</p>
+        <ul class="price-list">
+          <li>₹200 — Basic</li>
+          <li>₹400 — Advanced</li>
+          <li>₹600 — Full Package</li>
+        </ul>
+        <h4>Perks</h4>
+        <ul class="perks">
+          <li>Fast turnaround</li>
+          <li>Royalty-free music</li>
+          <li>Export presets for YouTube</li>
+        </ul>
+        <button class="btn buy-btn" data-service="Video Editing">Buy with Gift Cards</button>
+      </article>
+
+      <!-- GFX (pink) -->
+      <article class="card service-gfx">
+        <div class="icon-wrap">
+          <img src="assets/icon-gfx.png" alt="GFX" class="svc-icon" onerror="this.style.display='none'">
+          <div class="icon-fallback">D</div>
+        </div>
+        <h3>GFX Designing</h3>
+        <p class="desc">Logos, thumbnails, banners.</p>
+        <ul class="price-list">
+          <li>₹149 — Logo</li>
+          <li>₹249 — Thumbnail Pack</li>
+          <li>₹499 — Full Branding Set</li>
+        </ul>
+        <h4>Perks</h4>
+        <ul class="perks">
+          <li>Source files included</li>
+          <li>Multiple revisions</li>
+          <li>Fast delivery</li>
+        </ul>
+        <button class="btn buy-btn" data-service="GFX Designing">Buy with Gift Cards</button>
+      </article>
+
+    </section>
+
+    <!-- Payment popup -->
+    <div id="giftModal" class="modal" aria-hidden="true">
+      <div class="modal-panel">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <h2 id="modalTitle">Pay with Gift Card</h2>
+        <p class="modal-sub">Accepted cards: <strong>Steam</strong> & <strong>Google Play</strong></p>
+
+        <div class="modal-steps">
+          <label>Choose gift card type</label>
+          <div class="card-buttons">
+            <button class="card-type" data-type="Google Play">Google Play</button>
+            <button class="card-type" data-type="Steam">Steam</button>
+          </div>
+
+          <label>Amount (approx)</label>
+          <select id="amountSelect">
+            <option>₹150</option>
+            <option>₹299</option>
+            <option>₹450</option>
+            <option>₹300</option>
+            <option>₹550</option>
+            <option>₹999</option>
+          </select>
+
+          <label>Gift card code</label>
+          <input id="giftCode" placeholder="Enter or paste code here">
+
+          <p class="info">After buying, send the same code to:</p>
+          <div class="email-box">vanshparsonal59@gmail.com <button id="copyEmail">Copy</button></div>
+
+          <p class="note">We will verify the code and activate subscription within 1–6 hours.</p>
+
+          <div class="modal-actions">
+            <button id="sendEmail" class="btn primary">I sent the code (Notify)</button>
+            <button id="cancel" class="btn">Cancel</button>
+          </div>
+        </div>
+      </div>
     </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© VG Services — Pay via Steam / Play Store gift cards</p>
+  </footer>
 
 <script src="script.js"></script>
 </body>
